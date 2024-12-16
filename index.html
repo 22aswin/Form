@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="h1">Registration Form </h1>
+<div class="one">
+    <form class="two" >
+    <label>Name:</label>
+    <input type="text" placeholder="name" id="Name"><br>
+    <span class="Name">Note:Name Required</span><br><br>
+
+    <label>Email:  </label>
+    <input type="text" placeholder="Email" id="Email" ><br>
+    <span class="Email">Note:Email Required</span><br><br>
+
+    <label>Password:</label>
+    <input type="text" placeholder="Password" id="Password"><br>
+    <span class="Password">Note:Password Required</span><br><br>
+    <button id="button">Submit</button>
+    </form>
+    </div>
+    <script>
+        var button=document.getElementById("button")
+        //regex variables for validation
+        var nameRegex=/^[a-zA-Z]+$/
+
+        var emailRegex=/^[a-zA-z0-9]+@gmail\.com/
+
+        var passwordRegex=/^[a-zA-Z0-9]+$/
+
+        // calling the input fields
+            var Name=document.getElementById("Name")
+            var Email=document.getElementById("Email")
+            var Password=document.getElementById("Password")
+
+
+        // creating event listener
+        button.addEventListener("click",function(){
+            event.preventDefault() //to avoid refresh of page
+           
+
+
+            if(nameRegex.test(Name.value)==false)
+            {
+            document.querySelector(".Name").style.display="inline"
+            } 
+            else{
+                document.querySelector(".Name").style.display="none"
+            }
+   
+
+
+            if(emailRegex.test(Email.value)==false)
+            {
+            document.querySelector(".Email").style.display="inline"
+            } 
+            else{
+                document.querySelector(".Email").style.display="none"
+            }
+
+
+
+            if(passwordRegex.test(Password.value)==false)
+            {
+            document.querySelector(".Password").style.display="inline"
+            } 
+            else{
+                document.querySelector(".Password").style.display="none"
+            }
+        
+        }) 
+       
+       
+
+    </script>
+</body>
+</html>
